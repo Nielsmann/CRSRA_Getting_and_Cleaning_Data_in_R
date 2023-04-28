@@ -5,4 +5,6 @@ The R code that I present in the TXT file should contain a script that automatic
 
 The aim is to extract the relevant files from this ZIP archive, clean the data, merge them together and replace the column names. Further a lookup join shall be performed to add some understandable "activity labels" to the label codes in the data set so that in the end the data set is "tidy" and ready for analysing.
 
-A second dataset is then built from the tidy dataset which only contains the mean values for each columns, grouped by the activity labels.
+The final data set "TidyDatSet" is then built from the tidy dataset which only contains the mean values for each column, grouped by the activity labels.
+
+Thanks for watching ... ;-)
