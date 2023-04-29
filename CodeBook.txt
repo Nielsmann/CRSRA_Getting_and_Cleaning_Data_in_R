@@ -1,4 +1,54 @@
-"x"
+*****************************************************************************************************
+***** This R script aims to download a ZIP archive fron an URL containing survey data from ...  *****
+*****************************************************************************************************
+
+STEPWISE R CODE PROCESSING DESCRIPTION
+***************************************
+1. Load relevant R package Tidyverse
+
+2. Create temporary store file and download zip-file from URL and store it in the temporary file "temp"
+
+3. List the different data files and their paths contained in the ZIP archive
+
+4. Read test data and training data files from ZIP archive to "TrainDat" and to "TestDat"
+
+5. Read the features file with the column names from ZIP archive and 'pull' the column "X2" as a vector. This is the new header for the columns.
+
+6. Assign the new column names from the vector "Header" to the TrainDat and the TestDat data set with the names() function
+
+7. Read activity label codes for test data and training data files from ZIP archive and store them in "..DatLabelCodes"
+
+8. Add column with TrainingDat-LabelCodes to TrainDat using function cbind()
+
+9. Add column with TestDat-LabelCodes to TestDat using function cbind()
+
+10. Read activity labels with descriptive activity names => create Lookup-Table "ActivityLabels"
+
+11. Merge Training and Test data sets vertically with function rbind()
+
+12. Select those columns where column name contains either "str()" or "mean()" 
+
+13. Create a look-up column with descriptive activity labels taken from "ActivityLabels" using function left_join()
+
+14. Relocate new column towards beginning of data set with function relocate()
+
+15. Rename the Activity Label column from "X2" to "Activity Label" using function rename()  
+
+16. Remove column named "X1" containing the activity code number
+
+17. Create a new and tidy dataframe "TidyDataSet" with mean values of all variables grouped by activity with function summarise()
+
+18. Write "TidyDataSet" into a TXT file using function "write.table()"
+
+19. Clean up R environment from temporary createtd objects with function rm()
+
+20. Release some RAM memory with function gc() 
+
+
+
+
+VARIABLES CONTAINING THE RESULT DATA SET "TidyDatSet":
+*********************************************************
 "ActivityLabel"
 "tBodyAcc-mean()-X_1"
 "tBodyAcc-mean()-Y_1"
